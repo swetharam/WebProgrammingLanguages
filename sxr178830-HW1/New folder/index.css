@@ -1,0 +1,106 @@
+{
+box-sizing: border-box;
+}
+
+body {
+margin: 0;
+
+}
+
+/* Style the header */
+.header {
+background-color: #f1f1f1;
+position: fixed;
+padding: 20px;
+text-align: center;
+}
+
+/* Style the top navigation bar */
+.topnav {
+overflow: hidden;
+background-color: #333;
+}
+
+/* Style the topnav links */
+.topnav a {
+float: left;
+display: block;
+color: #f2f2f2;
+text-align: center;
+padding: 14px 16px;
+text-decoration: none;
+}
+
+/* Change color on hover */
+.topnav a:hover {
+background-color: #ddd;
+color: black;
+}
+
+/* Create three unequal columns that floats next to each other */
+.column {
+float: left;
+padding: 10px;
+
+}
+
+/* Left column */
+.column.side {
+width: 20%;
+
+}
+
+/* Right column */
+.column.middle {
+width: 60%;
+border: 1px solid #000000;
+background-color: WhiteSmoke
+
+
+}
+.column.right {
+width: 20%;
+
+
+
+}
+
+
+/* Clear floats after the columns */
+.row:after {
+content: "";
+display: table;
+clear: both;
+}
+/* Styles the left nav bar*/
+.navbar{
+	float: left;
+	padding-left: 30px;
+	
+
+}
+.images{
+float: left;
+padding-right: 30px;
+height: 250px;
+width: 200px;
+border: 10px solid transparent;
+
+}
+#container {
+padding: 0px;
+border: 2px solid #000000;
+
+
+}
+.creative{
+font: italic;
+text-align: center;
+font-family:"Palatino Linotype";
+}
+.logo{
+	float: center;
+	height: 100px;
+	width: 100px;
+}
+

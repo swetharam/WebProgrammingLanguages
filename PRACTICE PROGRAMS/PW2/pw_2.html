@@ -1,0 +1,43 @@
+<html>
+<body>
+<script>  
+function validateform(){  
+var name=document.myform.name.value;  
+var password=document.myform.password.value;  
+var phno=document.myform.phno.value;
+  
+if (name==null || name==""){  
+  alert("Name can't be blank");
+   name.style.backgroundColor = "red";  
+  return false;  
+} else 
+	if(password==null || password==""){  
+	  alert("Password cant be blank.");  
+	   password.style.backgroundColor = "red";
+	  return false;  
+	  } 
+	  else 
+	if(phno==null || phno==""){  
+	  alert("Phone Number cant be blank.");  
+	  phno.style.backgroundColor = "red";
+	  return false;  
+	  } 
+	  else if(phno!=){
+	  	alert("Phone number should have only numbers");
+	  	return false;
+	  }
+}  
+</script> 
+<style type="text/css">
+	
+</style> 
+<body>  
+<form name="myform" method="post" onsubmit="return validateform()" >  
+User Name: <input type="text" name="name" minlength="6"><br/>  
+Password: <input type="text" name="password" minlength="6"><br/> 
+Phone No: <input type="number" name="phno"><br/><br>
+
+<input type="submit" value="Validate">  
+</form>  
+</body>
+</html>

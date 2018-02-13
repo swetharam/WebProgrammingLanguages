@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function validateForm() {
+    var x = document.getElementById("uname").value;
+    var y = document.getElementById("pass").value;
+    var z = document.getElementById("phno").value;
+    
+
+    if (x == "") {
+        alert("Username must be filled out");
+        document.getElementById("before").className = 'errorm';
+        document.getElementById("uname").className = 'bck';
+        x_wrong=true;
+        return false;
+    }
+
+    
+    	if (y == "") {
+        alert("Password must be filled out");
+        document.getElementById("before").className = 'errorm';
+        document.getElementById("demo").className = 'after';
+        document.getElementById("pass").className = 'bck';
+        return false;
+    }
+   
+    	if (z == "") {
+        alert("Phone Number must be filled out");
+        document.getElementById("before").className = 'errorm';
+        document.getElementById("demo").className = 'after';
+        document.getElementById("phno").className = 'bck';
+        return false;
+    }
+    if (true) 
+    	{
+    		document.getElementById("uname").style.backgroundColor="white";
+    		document.getElementById("pass").style.backgroundColor="white";
+    		document.getElementById("phno").style.backgroundColor="white";
+	document.getElementById("demo").className = 'change';
+	document.getElementById("before").className = 'after';
+	return false;
+}
+else{
+document.getElementById("before").className = 'errorm';
+return false;
+}
+if(x== "" && y== "" && z== ""){
+	document.getElementById("uname").className='bck';
+	document.getElementById("pass").className = 'bck';
+	document.getElementById("phno").className = 'bck';
+}
+
+
+
+}
+</script>
+<style type="text/css">
+
+.demo{
+	visibility: hidden;
+	color: green;
+
+}
+#demo.change{
+	visibility: visible;
+	color: green;
+}
+.before{
+	visibility: hidden;
+}
+#before.errorm{
+	visibility: visible;
+	color: red;
+
+}
+#before.after{
+	visibility: hidden;
+}
+#demo.after{
+	visibility: hidden;
+}
+
+#uname.bck{
+	background-color: red;
+}
+#pass.bck{
+	background-color: red;
+}
+#phno.bck{
+	background-color: red;
+}
+
+	
+</style>
+</head>
+<body>
+
+<form name="myForm"  
+onsubmit="return validateForm()" >
+Username: <input type="text" name="uname" id="uname" minlength="6"><br>
+Password: <input type="text" name="pass" id="pass" minlength="6"><br>
+Phone Number: <input type="number" name="phno" id="phno"><br><br>
+<input type="submit" value="Validate">
+</form>
+<p id="demo" class="demo"> Success!</p>
+<p id="before" class="before">Error!</p>
+
+
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Movie Catalog</title>
+  <meta charset="utf-8">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <style>
+table {
+    width:100%;
+	
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+    text-align: left;
+}
+
+</style>
+  <script>
+    function validate(){
+	$.ajax({
+		 type: "GET",
+		 url: "movies.xml",
+		 dataType: "xml",
+		 success: function(data) {
+		 var table = "<tr><th>Title</th><th>Genre</th><th>MPAA</th><th>Director</th><th>Cast</th><th>Description</th><th>IMDB</th></tr>";
+		 document.getElementById("table").innerHTML = table;
+		 $(data).find('movie').each(function(){
+			var title = $(this).find('title').text();
+			var mpaa = $(this).find('mpaa-rating').text();
+			var dir = $(this).find('director').text();
+			var des = $(this).find('synopsis').text();
+			var imdb = $(this).find('score').text();
+			var genre ="";
+			var cast="";		
+			var c = 0, a=0;			
+			$(this).find('genre').each(function(){
+				 
+				 if(genre!=""){
+				 genre = genre +','+ $(this).text();
+				}
+				else{
+					genre = $(this).text();
+				}
+			});
+			$(this).find('cast').each(function(){
+			$(this).find('person').each(function(){
+				if(cast!=""){
+					cast = cast + ', '+$(this).attr('name');
+					a = a+1;
+				
+				 }
+				 else{
+				 cast = cast +$(this).attr('name');
+				 } 
+			});
+			});
+			
+			
+			table = table + "<tr><td>" + title + "</td><td>" + genre + "</td><td>" + mpaa + "</td><td>" + dir +"</td><td>" + cast +"</td><td>" + des + "</td><td>" + imdb + "</td></tr>";
+			document.getElementById("table").innerHTML = table;
+		        });
+
+		 }
+		 
+     });
+}
+  </script>
+</head>
+<body>
+	
+	<button id="button" onclick="validate()">Click me to Load XML!</button>
+	<table id="table">
+	</table>
+</body>
+</html>

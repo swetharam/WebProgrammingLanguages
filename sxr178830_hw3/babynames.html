@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+		<script src="jquery-1.9.1.min.js"></script>
+		<script src="babynames.js"></script>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+</head>
+<body>
+	<!-- The following is the main div of the entire page -->
+<div class="container-fluid">
+		<br/>
+		<br/>
+		<br/>
+		<!-- This has the year selection option -->
+		<select id="year-option">
+		<option value="">Select One Choice</option>
+		<option value="2005">2005</option>
+		<option value="2006">2006</option>
+		<option value="2007">2007</option>
+		<option value="2008">2008</option>
+		<option value="2009">2009</option>
+		<option value="2010">2010</option>
+		<option value="2011">2011</option>
+		<option value="2012">2012</option>
+		<option value="2013">2013</option>
+		<option value="2014">2014</option>
+		<option value="2015">2015</option>
+		</select>
+		<!-- This has the gender selection option -->
+		<select id="gender-option">
+		<option value="">Select One Choice</option>
+		<option value="m">Male</option>
+		<option value="f">Female</option>
+		</select>
+		<!-- This has the button which searches the table for the query  -->
+		<button>SEARCH</button>
+		<h4>The result to the given query is as follows:</h4>
+		<!-- This shows the final output -->
+		<table class="table" id="table" border="1">
+		<tr>
+		<th>NAMES</th>
+		<th>RANKINGS</th>
+		<th>GENDER</th>
+		<th>YEAR</th>
+		</tr>
+		</table>
+</div>
+</body>
+</html>
+
